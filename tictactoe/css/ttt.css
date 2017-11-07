@@ -1,0 +1,68 @@
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: sans-serif;
+  margin: 30px auto;
+  font-size: 60px;
+}
+
+li {
+  float: left;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  background: gray;
+  border: 5px solid black;
+  margin: 0;
+}
+
+.unplayed:hover {
+  background: yellow;
+}
+
+ul {
+  border: 5px solid black;
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+}
+
+ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.played {
+  display: flex;
+  background: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.played h1 {
+
+}
+
+.loser {
+  color: red;
+  background: white;
+}
+
+.winner {
+  background: green;
+  color: white;
+}
+
+h3 {
+  margin: 30px auto;
+  font-family: sans-serif;
+  font-size: 36px;
+}

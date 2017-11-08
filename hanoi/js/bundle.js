@@ -183,8 +183,7 @@ class View {
     for(let i = 0; i < towers.length; i++) {
       let stack = $($('ul')[i]).children();
       stack = $(Array.from(stack).reverse());
-      let discs = towers[i].reverse();
-      console.log(towers[i].reverse());
+      let discs = towers[i];
       for(let j = 0; j < 3; j++) {
         if (towers[i][j]) {
           $(stack[j]).addClass(`disc-size-${towers[i][j]}`);
@@ -194,26 +193,12 @@ class View {
           $(stack[j]).removeClass();
           $(stack[j]).addClass(`empty`);
         }
-          // $li.addClass(`disc-size-${towers[i][j-1]}`);
       }
       if (this.game.isWon()) {
         $('ul').off("click");
         $('li.disc').addClass("won");
       }
     }
-    // $('li').addClass('empty');
-    // $('li').removeClass('disc').removeClass('disc-size-3').removeClass('disc-size-2').removeClass('disc-size-1');
-    // for(let i = 0; i < towers.length; i++) {
-    //   for(let j = 3; j > 0; j--) {
-    //     // $(towers[i]).children(`li#${j}`);
-    //     let $li = $(`li#${j}`);
-    //     if (towers[i][j-1]) {
-    //       $li.removeClass(`empty`);
-    //       $li.addClass(`disc-size-${towers[i][j-1]}`);
-    //       $li.addClass(`disc`);
-    //     }
-    //   }
-    // }
   }
 
   bindClicks() {
@@ -225,9 +210,10 @@ class View {
   clickTower(e) {
     if (this.selectedTower < 0) {
       this.selectedTower = Number($(e.target).parent().attr("id"));
-      console.log('selected');
+      $(e.target).parent().addClass("selected-tower");
     } else {
       this.game.move(this.selectedTower, Number($(e.target).parent().attr("id")));
+      $('ul').removeClass();
       this.selectedTower = -1;
       this.render();
       console.log(this.game.towers);

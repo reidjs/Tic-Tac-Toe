@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.hanoi {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+  width: 200px;
+  border: 2px solid red;
+}
+
+.disc-size-1 {
+  width: 100px;
+}
+
+.disc-size-2 {
+  width: 150px;
+}
+
+.disc-size-3 {
+  width: 200px;
+}
+
+.disc {
+  height: 40px;
+  background: black;
+  border-radius: 15px;
+}
+
+.empty {
+  width: 100px;
+  border: 1px solid blue;
+  height: 40px;
+}
+
+.won {
+  background: green;
+}

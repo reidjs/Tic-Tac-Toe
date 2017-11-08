@@ -4,26 +4,32 @@ body {
   align-items: center;
 }
 
+h1 {
+  font-family: sans-serif;
+  font-size: 60px;
+}
+
 .hanoi {
   display: flex;
   justify-content: space-around;
-  width: 70%
+  width: 750px;
 }
 
 li {
+  /*border: 1px solid black;*/
   padding: 5px;
 }
 
 ul {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   align-items: center;
   list-style: none;
   width: 200px;
   padding-left: 0;
   padding-bottom: 20px;
-  margin: 10px;
+  /*margin: 10px;*/
   border-bottom: 10px solid black;
 }
 

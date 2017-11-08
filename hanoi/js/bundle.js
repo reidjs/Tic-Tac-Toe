@@ -202,17 +202,17 @@ class View {
   }
 
   bindClicks() {
-    $('ul').on("click", "li", (e) => {
+    $('ul').on("click", (e) => {
       this.clickTower(e);
     });
   }
 
   clickTower(e) {
     if (this.selectedTower < 0) {
-      this.selectedTower = Number($(e.target).parent().attr("id"));
-      $(e.target).parent().addClass("selected-tower");
+      this.selectedTower = Number($(e.currentTarget).attr("id"));
+      $(e.currentTarget).addClass("selected-tower");
     } else {
-      this.game.move(this.selectedTower, Number($(e.target).parent().attr("id")));
+      this.game.move(this.selectedTower, Number($(e.currentTarget).attr("id")));
       $('ul').removeClass();
       this.selectedTower = -1;
       this.render();

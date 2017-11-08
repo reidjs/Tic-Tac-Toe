@@ -46,7 +46,7 @@ class View {
   }
 
   bindClicks() {
-    $('ul').on("click", "li", (e) => {
+    $('ul').on("click", (e) => {
       this.clickTower(e);
     });
   }
